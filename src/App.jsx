@@ -15,7 +15,6 @@ function App() {
         <Route path="/question" element={<MainLayout><Question /></MainLayout>} />
         <Route path="/final-score" element={<MainLayout><FinalScore /></MainLayout>} />
         <Route path="/leaderboard" element={<MainLayout><Leaderboard /></MainLayout>} />
-      
       </Routes>
     </>
   )
