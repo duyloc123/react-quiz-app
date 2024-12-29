@@ -3,10 +3,16 @@ import AppBar from '@mui/material/AppBar';
 import Toolbar from '@mui/material/Toolbar';
 import Typography from '@mui/material/Typography';
 import Box from '@mui/material/Box';
+import { useNavigate } from 'react-router-dom';
 
 function MainLayout({ children }) {
+  const navigate = useNavigate();
   function gotToHome() {
     window.location.href = '/'
+  }
+
+  function gotoLeaderboard() {
+    navigate('/leaderboard')
   }
 
   return (
@@ -19,7 +25,7 @@ function MainLayout({ children }) {
             Quiz App
           </Typography>
 
-          <Typography variant="h6" noWrap component="div">
+          <Typography variant="h6" noWrap component="div" onClick={gotoLeaderboard}>
             Leaderboard
           </Typography>
         </Toolbar>

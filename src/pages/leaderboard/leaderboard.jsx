@@ -18,6 +18,7 @@ import formatDate from '../../utils/formatDate';
 const headers = ['First Name', 'Last Name', ' Email', 'Score']
 
 function Leaderboard() {
+  const sessionUsers = JSON.parse(window.sessionStorage.getItem('users'));
   const users = useSelector(state => state.dashboard.users);
 
   const rows = users.map(item => {
@@ -50,7 +51,7 @@ function Leaderboard() {
             </TableRow>
           </TableHead>
           <TableBody>
-            {users.map((row) => (
+            {(sessionUsers || users).map((row) => (
               <TableRow
                 key={row.id}
                 sx={{ '&:last-child td, &:last-child th': { border: 0 } }}

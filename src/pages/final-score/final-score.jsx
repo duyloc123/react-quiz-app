@@ -14,6 +14,7 @@ function FinalScore() {
   const dispatch = useDispatch();
   const navigate = useNavigate();
   const score = useSelector(state => state.question.score);
+  const users = useSelector(state => state.dashboard.users);
   const { 
     register, 
     control, 
@@ -34,6 +35,12 @@ function FinalScore() {
       email: data.email,
       score
     }
+    // save session storage
+    const storageUsers = window.sessionStorage.getItem('users');
+    const parserUsers = JSON.parse(storageUsers || []);
+    const sessionUsers = [...(parserUsers.length === 0 ? users : parserUsers), user];
+    window.sessionStorage.setItem('users', JSON.stringify(sessionUsers));
+
     dispatch(setUser(user));
     navigate('/leaderboard')
   }
