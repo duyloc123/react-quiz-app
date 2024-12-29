@@ -3,10 +3,11 @@ import AppBar from '@mui/material/AppBar';
 import Toolbar from '@mui/material/Toolbar';
 import Typography from '@mui/material/Typography';
 import Box from '@mui/material/Box';
-import { useNavigate } from 'react-router-dom';
 
 function MainLayout({ children }) {
-  const navigate = useNavigate();
+  function gotToHome() {
+    window.location.href = '/'
+  }
 
   return (
     <>
@@ -14,7 +15,7 @@ function MainLayout({ children }) {
         position="fixed"
       >
         <Toolbar sx={{ justifyContent: 'space-between' }}>
-          <Typography variant="h6" noWrap component="div" onClick={() => navigate('/')}>
+          <Typography variant="h6" noWrap component="div" onClick={gotToHome}>
             Quiz App
           </Typography>
 
