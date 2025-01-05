@@ -1,8 +1,18 @@
-# React + Vite
+# React Quiz App
+**Tech: React Typescript, MUI, Tailwind CSS, Vite, Redux**
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+**Requirement:**
+- Add field “name” in Result Page
+- Validate “name”
+- Save leaderboard in session storage
+- Show leaderboard page (Table)
+- Allow search
+- Export csv file when user click “Export CSV” file
+- Pagination
+- Show list score
 
-Currently, two official plugins are available:
+**Demo: https://react-quiz-app-fdzg.vercel.app/**
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+
+![image](https://github.com/user-attachments/assets/98ade928-3896-4ce2-a7b9-1be15e644027)
+
