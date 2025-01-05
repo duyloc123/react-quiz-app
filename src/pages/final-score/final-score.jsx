@@ -41,10 +41,13 @@ function FinalScore() {
       score,
     };
     // save session storage
-    const storageUsers = window.sessionStorage.getItem('users');
-    const parserUsers = JSON.parse(storageUsers || []);
-    const sessionUsers = [...(parserUsers.length === 0 ? users : parserUsers), user];
-    window.sessionStorage.setItem('users', JSON.stringify(sessionUsers));
+    const storageUsers = window.sessionStorage.getItem("users");
+    const parserUsers = storageUsers ?  JSON.parse(storageUsers) : [] ;
+    const sessionUsers = [
+      ...(parserUsers.length === 0 ? users : parserUsers),
+      user,
+    ];
+    window.sessionStorage.setItem("users", JSON.stringify(sessionUsers));
 
     dispatch(setUser(user));
     navigate("/leaderboard");
